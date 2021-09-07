@@ -32104,7 +32104,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   width: 8px !important;
-  background: linear-gradient(rgb(59, 130, 246), rgb(16, 185, 129), rgb(59, 130, 246), rgb(16, 185, 129), rgb(59, 130, 246), rgb(16, 185, 129), rgb(59, 130, 246));
+  background: linear-gradient(rgb(59, 130, 246), rgb(16, 185, 129), rgb(59, 130, 246), rgb(16, 185, 129), rgb(59, 130, 246));
 }
 
 @media (min-width: 640px) {

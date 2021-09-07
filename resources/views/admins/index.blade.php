@@ -12,18 +12,16 @@
     </div>
 
     <x-data-table :href="route('admins.index')" :filter="$filter">
-        <x-slot name="thead">
-            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                <th class="py-3 px-4 text-center">SL</th>
-                <th class="py-3 px-4 text-left">Role</th>
-                <th class="py-3 px-4 text-left">Name</th>
-                <th class="py-3 px-4 text-left">Phone</th>
-                <th class="py-3 px-4 text-left">Email</th>
-                <th class="py-3 px-4 text-left">Security</th>
-                <th class="py-3 px-4 text-center">Active</th>
-                <th class="py-3 px-4 text-center">Actions</th>
-            </tr>
-        </x-slot>
+        <tr class="bg-blue-600 text-white uppercase text-sm leading-normal">
+            <th class="py-3 px-2 text-center">SL</th>
+            <th class="py-3 px-2 text-left">Role</th>
+            <th class="py-3 px-2 text-left">Name</th>
+            <th class="py-3 px-2 text-left">Phone</th>
+            <th class="py-3 px-2 text-left">Email</th>
+            <th class="py-3 px-2 text-left">Security</th>
+            <th class="py-3 px-2 text-center">Active</th>
+            <th class="py-3 px-2 text-center">Actions</th>
+        </tr>
     </x-data-table>
 
 </x-app-layout>

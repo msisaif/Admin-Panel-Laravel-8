@@ -137,7 +137,7 @@ class AdminController extends Controller
     {
         return [
             'role' => Role::orderBy('id')->pluck('name', 'id'),
-            // 'active' => ['Yes' => 'Yes', 'No' => 'No'],
+            'active' => ['Yes' => 'Yes', 'No' => 'No'],
         ];
     }
 

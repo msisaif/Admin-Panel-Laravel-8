@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'Nilkhet' }}</title>
+    <title>{{ $title ?? 'Admin Panel' }}</title>
 
 
     <!-- Styles -->
@@ -15,24 +15,27 @@
     {{ $style ?? '' }}
 </head>
 
-<body class="font-sans antialiased min-h-screen bg-gray-50">
-    <nav id="sidebarWrapper"
-        class="bg-blue-600 md:static absolute right-full top-16 min-w-max py-4 px-4 flex flex-col md:flex-row justify-center bg-white z-10">
-        @include('layouts.navigation')
-    </nav>
-    <header class="relative shadow border-b border-t md:px-4 bg-white">
-        <svg id="menuButton" class="w-8 absolute left-4 top-4 md:hidden text-blue-600 cursor-pointer z-40"
-            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-
-        <div class="py-4 flex justify-between items-center">
-            <div class="flex-auto pr-5 pl-8 md:pl-5">
-                <h2 class="font-semibold text-center text-sm md:text-xl text-blue-600 leading-tight">
-                    {{ $header ?? '' }}
-                </h2>
+<body class="overflow-y-auto">
+    <header>
+        <div class="flex justify-between py-2 bg-blue-600 text-white z-40">
+            <!-- Menu Button -->
+            <div class="mx-4">
+                <svg id="menuButton" class="w-8 h-8 cursor-pointer z-40" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
             </div>
-            <div class="px-2 md:px-5">
+
+            <!-- Heading -->
+            <div class="flex-grow flex justify-center items-center">
+                <h3 class="font-semibold text-center text-sm md:text-xl leading-tight">
+                    {{ $header ?? '' }}
+                </h3>
+            </div>
+
+
+            <!-- Logout Button -->
+            <div class="mx-4">
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <button :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();"
@@ -47,44 +50,51 @@
             </div>
         </div>
     </header>
-
-    <main>
-
-        <!-- Flash Message -->
-        <div id="flashMessage">
-            @if(session('status'))
-            <div
-                class="text-white md:text-xl px-4 py-3 border-0 rounded-md shadow relative md:mx-4 mt-4 {{ session('class') ?? 'bg-green-500' }}">
-                {{ session('status') }}
+    <div class="overflow-auto">
+        <div class="flex">
+            <div id="sidebarContainer" class="hidden md:block z-30">
+                <nav>
+                    <div class="w-screen h-full min-h-screen md:w-auto min-w-max bg-blue-700 p-4 flex flex-col">
+                        @include('layouts.navigation')
+                    </div>
+                </nav>
             </div>
-            @endif
+            <div class="flex-auto overflow-auto z-30">
+                <main>
+                    <!-- Flash Message -->
+                    <div id="flashMessage">
+                        <!-- Validation Errors -->
+                        <x-auth-session-status class="md:text-xl px-4 py-3 md:mx-4 mt-4" :status="session('status')" />
 
-            <!-- Validation Errors -->
-            <x-auth-validation-errors class="md:text-xl px-4 py-3 md:mx-4 mt-4" :errors="$errors" />
-        </div>
+                        <!-- Validation Errors -->
+                        <x-auth-validation-errors class="md:text-xl px-4 py-3 md:mx-4 mt-4" :errors="$errors" />
+                    </div>
 
-        <div class="w-full p-4">
-            {{ $slot }}
+                    <div class="w-full p-4">
+                        {{ $slot }}
+                    </div>
+                </main>
+            </div>
         </div>
-    </main>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
 
     <script>
         //sidebar menu
-            const sidebarWrapper = document.getElementById('sidebarWrapper')
-            const menuButton = document.getElementById('menuButton')
+        const sidebarContainer = document.getElementById('sidebarContainer')
+        const menuButton = document.getElementById('menuButton')
 
-            menuButton.onclick = function()
-            {
-                sidebarWrapper.classList.toggle('right-full')
-                sidebarWrapper.classList.toggle('w-full')
-                sidebarWrapper.classList.toggle('left-0')
-            }
+        menuButton.onclick = function()
+        {
+            sidebarContainer.classList.toggle('hidden')
+            sidebarContainer.classList.toggle('md:block')
+            sidebarContainer.classList.toggle('md:hidden')
+        }
 
-            //auto hide flash message
-            setTimeout(function () {document.querySelector('#flashMessage').style.display='none'}, 5000)
+        //auto hide flash message
+        setTimeout(function () {document.querySelector('#flashMessage').style.display='none'}, 5000)
 
     </script>
 

@@ -12,13 +12,11 @@
     </div>
 
     <x-data-table :href="route('roles.index')">
-        <x-slot name="thead">
-            <tr class="bg-gray-200 text-gray-600 uppercase text-sm leading-normal">
-                <th class="py-3 px-4 text-center">SL</th>
-                <th class="py-3 px-4 text-left">Name</th>
-                <th class="py-3 px-4 text-center">Actions</th>
-            </tr>
-        </x-slot>
+        <tr class="bg-blue-600 text-white uppercase text-sm leading-normal">
+            <th class="py-3 px-2 text-center">SL</th>
+            <th class="py-3 px-2 text-left">Name</th>
+            <th class="py-3 px-2 text-center">Actions</th>
+        </tr>
     </x-data-table>
 
 </x-app-layout>

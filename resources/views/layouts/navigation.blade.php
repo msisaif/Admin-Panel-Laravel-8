@@ -1,3 +1,10 @@
+<!-- Application Logo -->
+<div class="w-full flex justify-center items-center mb-4">
+    <a href="{{ route('dashboard') }}">
+        <x-application-logo class="w-full text-white font-bold" />
+    </a>
+</div>
+
 <!-- Navigation Menu -->
 <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
     <x-slot name="icon">

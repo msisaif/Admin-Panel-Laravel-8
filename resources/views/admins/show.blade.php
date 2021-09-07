@@ -15,7 +15,7 @@
         <table class="bg-white min-w-max w-full table-auto">
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
 
                 </th>
                 <td class="md:w-10/12 pt-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -25,7 +25,7 @@
             </tr>
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Name
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -33,7 +33,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Email
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -41,7 +41,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Security
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -49,7 +49,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Phone
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -57,7 +57,7 @@
                 </td>
             </tr>
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Create
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-light">
@@ -66,7 +66,7 @@
             </tr>
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal align-top">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal align-top">
                     Role
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -75,7 +75,7 @@
             </tr>
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Active
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-light">
@@ -87,7 +87,7 @@
             </tr>
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Actions
                 </th>
                 <td class="py-2 px-4 text-left">

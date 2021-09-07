@@ -14,7 +14,7 @@
     <div class="overflow-auto md:m-4 mb-4 border rounded-md shadow">
         <table class="bg-white min-w-max w-full table-auto">
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Name
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -23,7 +23,7 @@
             </tr>
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal align-top">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal align-top">
                     Permissions
                 </th>
                 <td class="md:w-10/12 py-3 px-4 text-left text-gray-600 text-sm font-bold">
@@ -34,7 +34,7 @@
             </tr>
 
             <tr>
-                <th class="py-3 px-4 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
+                <th class="py-3 px-2 text-right bg-gray-100 text-gray-600 uppercase text-sm leading-normal">
                     Actions
                 </th>
                 <td class="md:w-10/12 py-3 px-4 flex item-center justify-start">

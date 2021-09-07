@@ -80,7 +80,7 @@
 <div class="bg-white shadow-md rounded overflow-auto md:mx-4 relative">
     <table class="min-w-max w-full table-auto">
         <thead>
-            {{ $thead }}
+            {{ $slot }}
         </thead>
 
         <tbody class="text-gray-600 text-sm font-light" id="tableBody">
