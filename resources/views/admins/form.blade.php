@@ -73,7 +73,7 @@
 
     <!-- Button Group -->
     <div class="flex items-center justify-end my-6 col-span-full">
-        <x-anchor :href="route('admins.index')" />
+        <x-go-back :href="route('admins.index')" />
 
         <!-- Submit Button -->
         <x-button class="ml-auto">

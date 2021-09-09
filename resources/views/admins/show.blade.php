@@ -100,7 +100,7 @@
     </div>
 
     <div class="mt-4 md:mx-4 flex">
-        <x-anchor :href="route('admins.index')" />
+        <x-go-back :href="route('admins.index')" />
     </div>
 
 </x-app-layout>

@@ -59,7 +59,7 @@
 
 @if($admins->lastPage() > 1)
 <tr>
-    <td class="py-3 px-2 text-center" colspan="100">
+    <td class="py-3 px-2 text-center" colspan="100" id="__paginationLinkContainer__">
         {{ $admins->onEachSide(1)->appends(request()->except('flag'))->links() }}
     </td>
 </tr>

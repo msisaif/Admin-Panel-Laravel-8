@@ -95,44 +95,86 @@
 
 
 <script>
-    function search(url = '{{ $href }}'){
+    function search(url = '{{ $href }}') {
+       
+        const data = { flag: true }
 
-        const text = document.getElementById('search').value.trim();
-
-        const data = {
-            search: text.replaceAll(" ", "|"),
-            flag: true,
-            perpage: document.getElementById('perpage').value
-        }
+        data.perpage = document.getElementById('perpage').value
 
         document.querySelectorAll('.filter').forEach(element => {
             data[element.name] = element.value;
         });
 
+        const text = document.getElementById('search').value.trim();
+
+        data.search = text.replaceAll(" ", "|"),
+
         axios.get(url, {
             params : data
         })
         .then(function (response) {
-            document.getElementById('tableBody').innerHTML = response.data
+            document.getElementById('tableBody').innerHTML = response.data;
+            
+            const __paginationLinkContainer__ = document.getElementById('__paginationLinkContainer__');
+
+            let sl = 0;
+
+            __paginationLinkContainer__.querySelectorAll('a').forEach((__paginationLink__) => {
+                let href = __paginationLink__.getAttribute('href');
+
+                __paginationLink__.onclick = () => { search(href);  };
+
+                __paginationLink__.setAttribute('href', 'javascript:void(0)');
+            });
         })
         .catch(function (error) {
             console.log(error);
         });  
 
+        let params = '';
+
+        let paramSeparator = '';
+
+        Object.entries(data).forEach(param => {
+            if(param[0] == 'flag' || !param[1]) {
+                return;
+            }
+
+            params = `${params}${paramSeparator}${param[0]}=${param[1]}`;
+            
+            if(!paramSeparator) {
+                paramSeparator = '&';
+            }
+        });
+
         let excelDownload = document.querySelector('#excelDownload')
 
         if(excelDownload) {
-            let params = '';
-
-            Object.entries(data).forEach(param => {
-                params = params + `${param[0]}=${param[1]}` + '&';
-            });
-
-            excelDownload.href = excelDownload.href.split('?')[0] + '?' + params + 'excel=true'
+            excelDownload.href = excelDownload.href.split('?')[0] + '?flag=true&' + params + '&excel=true';
         }
+
+        let urlParams = new URLSearchParams(url.split('?')[1] || '') || '';
+
+        let page = urlParams.get('page') || '1';
+
+        let historyUrl = url.split('?')[0] + '?page=' + page + '&' + params.replaceAll("|", "+");
+
+        historyTitle = document.title;
+
+        historyState = {}
+
+        localStorage.setItem('historyUrl', historyUrl);
+
+        window.history.pushState(historyState, historyTitle, historyUrl);
+        
+    }
+
+    function changeHistory() {
+        
     }
 
     window.onload = () => {
         search(window.location.href);
     };
+
 </script>
